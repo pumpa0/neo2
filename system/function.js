@@ -133,19 +133,19 @@ module.exports = class Function {
       return list[Math.floor(Math.random() * list.length)]
    }
    
-   randomInt = (min, max) => {
+   randomInt(min, max) {
       min = Math.ceil(min)
       max = Math.floor(max)
       return Math.floor(Math.random() * (max - min + 1)) + min
    }
 
-   ucword = (str) => {
+   ucword(str) {
       return (str + '').replace(/^([a-z])|\s+([a-z])/g, function($1) {
          return $1.toUpperCase();
       })
    }
 
-   simpFormat = (str) => {
+   simpFormat(str) {
       try {
          let dot = str.match(/./g)
          let split = str.split('.')
