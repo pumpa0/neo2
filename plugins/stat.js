@@ -21,7 +21,7 @@ exports.run = {
             title: '© HanBotzX',
             ads: false,
             largeThumb: true,
-            thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d7d202256544ff9d8da86.jpg')
+            thumbnail: await Func.fetchBuffer('https://telegra.ph/file/bf9a6987a268545279452.jpg')
          })
       } catch (e) {
          client.reply(m.chat, Func.jsonFormat(e), m)

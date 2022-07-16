@@ -27,7 +27,7 @@ exports.run = {
                   let teks = `◦  *Title* : ${json.data.title}\n`
                   teks += `◦  *Author* : ${json.data.author}\n`
                   teks += `◦  *Duration* : ${json.data.duration}`
-                  client.sendFile(m.chat, 'https://telegra.ph/file/bf9a6987a268545279452.jpg', '', teks, m).then(() => {
+                  client.sendFile(m.chat, 'https://telegra.ph/file/92be727e349c3cf78c98a.jpg', '', teks, m).then(() => {
                      client.sendFile(m.chat, json.data.audio, json.data.title + '.mp3', '', m, {
                         document: true
                      })

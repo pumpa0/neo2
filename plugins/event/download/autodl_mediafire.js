@@ -37,7 +37,7 @@ exports.run = {
                   client.sendMessageModify(m.chat, text, m, {
                      title: '© HanBotzX',
                      largeThumb: true,
-                     thumbnail: await Func.fetchBuffer('https://telegra.ph/file/d7d202256544ff9d8da86.jpg')
+                     thumbnail: await Func.fetchBuffer('https://telegra.ph/file/bf9a6987a268545279452.jpg')
                   }).then(async () => {
                      client.sendFile(m.chat, json.data.link, unescape(decode(json.data.filename)), '', m)
                   })

@@ -82,9 +82,9 @@ module.exports = async (client, m) => {
             global.db.chats[m.chat].lastseen = new Date() * 1
          }
          if (!commands.includes(command) && matcher.length > 0 && !setting.self) {
-            if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `⭐ Command you are using is wrong, try the following recommendations :\n\n${matcher.map(v => '➠ *' + isPrefix + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
+            if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `🚩 Command you are using is wrong, try the following recommendations :\n\n${matcher.map(v => '➠ *' + isPrefix + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
          }
-         if (setting.error.includes(command) && !setting.self) return client.reply(m.chat, Func.texted('bold', `⭐ Command _${isPrefix + command}_ disabled.`), m)
+         if (setting.error.includes(command) && !setting.self) return client.reply(m.chat, Func.texted('bold', `🚩 Command _${isPrefix + command}_ disabled.`), m)
          if (commands.includes(command)) {
             users.hit += 1
             users.usebot = new Date() * 1
@@ -109,8 +109,8 @@ module.exports = async (client, m) => {
             if (!turn) continue
             if (!m.isGroup && global.blocks.some(no => m.sender.startsWith(no))) return client.updateBlockStatus(m.sender, 'block')
             if (setting.self && !isOwner && !m.fromMe) return
-            if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `⭐ Plugin disabled by Owner.`), m)
-            if (!['owner', 'information'].includes(name) && setting.groupmode) return client.reply(m.chat, Func.texted('bold', `⭐ System is in "group only" mode and can only be used in groups.`), m)
+            if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `🚩 Plugin disabled by Owner.`), m)
+            if (!['owner', 'information'].includes(name) && setting.groupmode) return client.reply(m.chat, Func.texted('bold', `🚩 System is in "group only" mode and can only be used in groups.`), m)
             if (!['me', 'owner'].includes(name) && users && users.banned) return
             if (cmd.cache && cmd.location) {
                let file = require.resolve(cmd.location)
@@ -129,7 +129,7 @@ module.exports = async (client, m) => {
                continue
             }
             if (cmd.limit && users.limit < 1) {
-               return client.reply(m.chat, `⭐ Your bot usage has reached the limit and will be reset at 00.00\n\nTo get more limits, upgrade to a premium plan send *${prefixes[0]}premium*`, m)
+               return client.reply(m.chat, `🚩 Your bot usage has reached the limit and will be reset at 00.00\n\nTo get more limits, upgrade to a premium plan send *${prefixes[0]}premium*`, m)
                continue
             }
             if (cmd.limit && users.limit > 0) {
@@ -137,7 +137,7 @@ module.exports = async (client, m) => {
                if (users.limit >= limit) {
                   users.limit -= limit
                } else {
-                  client.reply(m.chat, Func.texted('bold', `⭐ Your limit is not enough to use this feature.`), m)
+                  client.reply(m.chat, Func.texted('bold', `🚩 Your limit is not enough to use this feature.`), m)
                   continue
                }
             }

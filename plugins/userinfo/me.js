@@ -18,6 +18,7 @@ exports.run = {
          let caption = `乂  *U S E R - P R O F I L E*\n\n`
          caption += `	◦ *Name* : ${m.pushName}\n`
          caption += `	◦ *Limit* : ${Func.formatNumber(user.limit)}\n`
+         caption += `	◦ *Point* : ${Func.formatNumber(user.point)}\n`
          caption += `	◦ *Hitstat* : ${Func.formatNumber(user.hit)}\n`
          caption += `	◦ *Warning* : ${((m.isGroup) ? (typeof global.db.groups[m.chat].member[m.sender] != 'undefined' ? global.db.groups[m.chat].member[m.sender].warning : 0) + ' / 5' : user.warning + ' / 5')}\n\n`
          caption += `乂  *U S E R - S T A T U S*\n\n`
