@@ -9,7 +9,7 @@ exports.run = {
          now = new Date() * 1
       let sider = []
       member.map(v => {
-         if ((typeof global.users[v] == 'undefined' && typeof global.groups[m.chat].member[v] == 'undefined') && v != client.user.id.split(':')[0] + '@s.whatsapp.net') sider.push(v)
+         if ((typeof global.db.users[v] == 'undefined' && typeof global.db.groups[m.chat].member[v] == 'undefined') && v != client.user.id.split(':')[0] + '@s.whatsapp.net') sider.push(v)
       })
       let lastseen = Object.entries(global.groups[m.chat].member).sort((a, b) => a[1].lastseen - b[1].lastseen).filter(([v, x]) => x.lastseen != 0 && ((now - x.lastseen > day) || (now - global.users[v].lastseen > day)) && !global.users[v].premium && !x.whitelist && !global.users[v].whitelist && v != client.user.id.split(':')[0] + '@s.whatsapp.net')
       let teks = `❏  *S I D E R*\n\n`
