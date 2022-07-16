@@ -6,7 +6,7 @@ exports.run = {
 	      command
 	   }) => {
 	      try {
-	         let user = global.users[m.sender]
+	         let user = global.db.users[m.sender]
 	         let price = ((3 / 100) * user.point).toFixed(0)
 	         if (isNaN(args[0])) return client.reply(m.chat, `*Limit harus berupa angka.*`, m)
 	         if (user.point >= price * parseInt(args[0])) {

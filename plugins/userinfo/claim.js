@@ -3,7 +3,7 @@ exports.run = {
    async: async (m, {
       client
    }) => {
-      let user = global.users[m.sender]
+      let user = global.db.users[m.sender]
       let timeClaim = 3600000
       let claimed = new Date(user.lastclaim + timeClaim)
       let timeout = claimed - new Date()
