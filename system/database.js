@@ -40,7 +40,7 @@ module.exports = (m) => {
          if (!('antidelete' in group)) group.antidelete = true
          if (!('antilink' in group)) group.antilink = true
          if (!('antivirtex' in group)) group.antivirtex = true
-         if (!('games' in group)) group.game = true
+         if (!('game' in group)) group.game = true
          if (!('filter' in group)) group.filter = false
          if (!('left' in group)) group.left = false
          if (!('localonly' in group)) group.localonly = false
@@ -55,7 +55,7 @@ module.exports = (m) => {
             antidelete: true,
             antilink: false,
             antivirtex: false,
-            games: true,
+            game: true,
             filter: false,
             left: false,
             localonly: false,
@@ -85,7 +85,7 @@ module.exports = (m) => {
    if (setting) {
   	if (!('autodownload' in setting)) setting.autodownload = true
   	if (!('debug' in setting)) setting.debug = false
-  	if (!('game' in setting)) setting.games = true
+  	if (!('games' in setting)) setting.games = true
       if (!('chatbot' in setting)) setting.chatbot = true
       if (!('error' in setting)) setting.error = []
       if (!('pluginDisable' in setting)) setting.pluginDisable = []
@@ -108,7 +108,7 @@ module.exports = (m) => {
          autodownload: true,
          chatbot: true,
          debug: false,
-         game: true,
+         games: true,
          error: [],
          pluginDisable: [],
          sk_pack: 'WhatsApp Bot',

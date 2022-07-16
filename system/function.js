@@ -133,6 +133,38 @@ module.exports = class Function {
       return list[Math.floor(Math.random() * list.length)]
    }
    
+   randomInt = (min, max) => {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min + 1)) + min
+   }
+
+   ucword = (str) => {
+      return (str + '').replace(/^([a-z])|\s+([a-z])/g, function($1) {
+         return $1.toUpperCase();
+      })
+   }
+
+   simpFormat = (str) => {
+      try {
+         let dot = str.match(/./g)
+         let split = str.split('.')
+         let getF = parseInt(split[1].substring(1, -split[1].length))
+         let e
+         if (dot.filter(v => v == '.').length == 1) e = 'K'
+         if (dot.filter(v => v == '.').length == 2) e = 'M'
+         if (dot.filter(v => v == '.').length == 3) e = 'B'
+         if (getF != 0) {
+            var output = split[0] + '.' + getF + e
+         } else {
+            var output = split[0] + e
+         }
+         return output
+      } catch {
+         return str
+      }
+   }
+
    /* Format Number \w Dot
     * @param {Integer} integer
     */
