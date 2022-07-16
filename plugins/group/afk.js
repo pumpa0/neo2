@@ -5,7 +5,7 @@ exports.run = {
       text
    }) => {
       try {
-         let user = global.users[m.sender]
+         let user = global.db.users[m.sender]
          user.afk = +new Date
          user.afkReason = text
          let tag = m.sender.split`@` [0]

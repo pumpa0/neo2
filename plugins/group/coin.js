@@ -6,7 +6,7 @@ exports.run = {
    }) => {
       if (!global.setting.games) return client.reply(m.chat, Func.texted('bold', `Game features are temporarily disabled by the owner.`), m)
       if (!global.groups[m.chat].game) return client.reply(m.chat, Func.texted('bold', `Game features are not activated in this group.`), m)
-      let user = global.users[m.sender]
+      let user = global.db.users[m.sender]
       if (!args || !args[0]) return client.reply(m.chat, Func.texted('bold', `Give coin type A or B`), m)
       if (user.point == 0) return client.reply(m.chat, Func.texted('bold', `You have no points to play coin.`), m)
       if (user.point < 300000) return client.reply(m.chat, Func.texted('bold', `To play the game points at least you must have 300k points.`), m)
